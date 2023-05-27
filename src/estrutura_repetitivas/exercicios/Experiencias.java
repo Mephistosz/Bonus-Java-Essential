@@ -31,12 +31,12 @@ public class Experiencias {
         sapos += numeroCobaias;
       } else if (tipoCobaia == 'R') {
         ratos += numeroCobaias;
-      } else {
+      } else if (tipoCobaia == 'C') {
         coelhos += numeroCobaias;
       }
     }
-
     total = sapos + ratos + coelhos;
+
     double pcoelhos = ((double) coelhos / total) * 100.0;
     double pratos = ((double) ratos / total) * 100.0;
     double psapos = ((double) sapos / total) * 100.0;
