@@ -20,6 +20,8 @@ public class Funcoes {
 
     sc.close();
 
+    System.out.println();
+
   }
 
   private int max(int a, int b, int c) {
