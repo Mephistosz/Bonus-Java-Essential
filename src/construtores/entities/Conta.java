@@ -1,4 +1,4 @@
-package contrutores.entities;
+package construtores.entities;
 
 public class Conta {
   int numero;

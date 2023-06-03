@@ -1,9 +1,9 @@
-package contrutores.application;
+package construtores.application;
 
 import java.util.Locale;
 import java.util.Scanner;
 
-import contrutores.entities.Conta;
+import construtores.entities.Conta;
 
 public class Program {
   public static void main(String[] args) {
