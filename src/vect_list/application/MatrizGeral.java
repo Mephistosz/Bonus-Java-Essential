@@ -12,6 +12,7 @@ public class MatrizGeral {
 
     System.out.print("Qual a ordem da matriz? ");
     int n = sc.nextInt();
+    String formatacao = "%.1f ";
 
     double[][] matriz = new double[n][n];
     double soma = 0;
@@ -34,7 +35,7 @@ public class MatrizGeral {
     for (int i = 0; i < matriz.length; i++) {
       for (int j = 0; j < matriz[i].length; j++) {
         if (i == nLinha) {
-          System.out.printf("%.1f ", matriz[i][j]);
+          System.out.printf(formatacao, matriz[i][j]);
         }
       }
     }
@@ -45,7 +46,7 @@ public class MatrizGeral {
     for (int i = 0; i < matriz.length; i++) {
       for (int j = 0; j < matriz[i].length; j++) {
         if (j == nColuna) {
-          System.out.printf("%.1f ", matriz[i][j]);
+          System.out.printf(formatacao, matriz[i][j]);
         }
       }
     }
@@ -61,7 +62,7 @@ public class MatrizGeral {
         if (matriz[i][j] < 0) {
           matriz[i][j] = Math.pow(matriz[i][j], 2);
         }
-        System.out.printf("%.1f ", matriz[i][j]);
+        System.out.printf(formatacao, matriz[i][j]);
       }
       System.out.println();
     }
