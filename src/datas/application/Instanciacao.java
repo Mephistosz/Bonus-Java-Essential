@@ -14,12 +14,12 @@ public class Instanciacao {
 
     LocalDate d01 = LocalDate.now(); // data sem horas
     LocalDateTime d02 = LocalDateTime.now(); // data com horas
-    Instant d03 = Instant.now(); // data sem horas, porem como GMT
+    Instant d03 = Instant.now(); // data com horas, e como GMT
 
     LocalDate d04 = LocalDate.parse("2023-06-06"); // texto para objeto, sem horas
     LocalDateTime d05 = LocalDateTime.parse("2023-06-06T06:03:01"); // texto para objeto, com horas
-    Instant d06 = Instant.parse("2023-06-06T06:03:01Z"); // texto para objeto, com horas, porem como GMT
-    Instant d07 = Instant.parse("2023-06-06T06:03:01-03:00"); // texto para objeto, com horas, porem como GMT e fuso
+    Instant d06 = Instant.parse("2023-06-06T06:03:01Z"); // texto para objeto, com horas, e como GMT
+    Instant d07 = Instant.parse("2023-06-06T06:03:01-03:00"); // texto para objeto, com horas, e como GMT e fuso
 
     LocalDate d08 = LocalDate.parse("06/06/2023", fmt1); // texto para objeto, sem horas, para ISO 8601
     LocalDateTime d09 = LocalDateTime.parse("06/06/2023T06:26:01", fmt2); // texto para objeto, com horas, para ISO 8601

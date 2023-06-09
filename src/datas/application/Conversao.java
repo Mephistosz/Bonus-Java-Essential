@@ -8,7 +8,7 @@ import java.time.ZoneId;
 public class Conversao {
   public static void main(String[] args) {
 
-    LocalDate d04 = LocalDate.parse("2022-07-20");
+    LocalDate d04 = LocalDate.parse("2022-07-08");
     LocalDateTime d05 = LocalDateTime.parse("2022-07-20T01:30:26");
     Instant d06 = Instant.parse("2022-07-20T01:30:26Z");
 
@@ -16,6 +16,13 @@ public class Conversao {
     LocalDate r2 = LocalDate.ofInstant(d06, ZoneId.of("Portugal"));
     LocalDateTime r3 = LocalDateTime.ofInstant(d06, ZoneId.systemDefault());
     LocalDateTime r4 = LocalDateTime.ofInstant(d06, ZoneId.of("Portugal"));
+
+    LocalDateTime r5 = LocalDateTime.ofInstant(d06, ZoneId.of("America/Sao_Paulo"));
+
+    Instant d07 = r5.atZone(ZoneId.of("America/Sao_Paulo")).toInstant();
+
+    System.out.println("Teste = " + r5);
+    System.out.println("Teste2 = " + d07);
 
     System.out.println("r1 = " + r1);
     System.out.println("r2 = " + r2);
