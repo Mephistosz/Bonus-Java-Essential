@@ -1,15 +1,15 @@
-package interfaces.model.entities;
+package generics_set_map.model.entities;
 
-public class Employee implements Comparable<Employee> {
+public class Product implements Comparable<Product> {
   private String name;
-  private Double salary;
+  private Double price;
 
-  public Employee() {
+  public Product() {
   }
 
-  public Employee(String name, Double salary) {
+  public Product(String name, Double price) {
     this.name = name;
-    this.salary = salary;
+    this.price = price;
   }
 
   public String getName() {
@@ -20,17 +20,22 @@ public class Employee implements Comparable<Employee> {
     this.name = name;
   }
 
-  public Double getSalary() {
-    return salary;
+  public Double getPrice() {
+    return price;
   }
 
-  public void setSalary(Double salary) {
-    this.salary = salary;
+  public void setPrice(Double price) {
+    this.price = price;
   }
 
   @Override
-  public int compareTo(Employee employee) {
-    return getSalary().compareTo(employee.getSalary());
+  public int compareTo(Product o) {
+    return getPrice().compareTo(o.getPrice());
+  }
+
+  @Override
+  public String toString() {
+    return "Product [name=" + name + ", price=" + price + "]";
   }
 
   @Override
@@ -38,7 +43,7 @@ public class Employee implements Comparable<Employee> {
     final int prime = 31;
     int result = 1;
     result = prime * result + ((name == null) ? 0 : name.hashCode());
-    result = prime * result + ((salary == null) ? 0 : salary.hashCode());
+    result = prime * result + ((price == null) ? 0 : price.hashCode());
     return result;
   }
 
@@ -50,16 +55,16 @@ public class Employee implements Comparable<Employee> {
       return false;
     if (getClass() != obj.getClass())
       return false;
-    Employee other = (Employee) obj;
+    Product other = (Product) obj;
     if (name == null) {
       if (other.name != null)
         return false;
     } else if (!name.equals(other.name))
       return false;
-    if (salary == null) {
-      if (other.salary != null)
+    if (price == null) {
+      if (other.price != null)
         return false;
-    } else if (!salary.equals(other.salary))
+    } else if (!price.equals(other.price))
       return false;
     return true;
   }

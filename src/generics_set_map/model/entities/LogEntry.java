@@ -1,15 +1,17 @@
-package interfaces.model.entities;
+package generics_set_map.model.entities;
 
-public class Employee implements Comparable<Employee> {
+import java.time.Instant;
+
+public class LogEntry {
   private String name;
-  private Double salary;
+  private Instant date;
 
-  public Employee() {
+  public LogEntry() {
   }
 
-  public Employee(String name, Double salary) {
+  public LogEntry(String name, Instant date) {
     this.name = name;
-    this.salary = salary;
+    this.date = date;
   }
 
   public String getName() {
@@ -20,17 +22,17 @@ public class Employee implements Comparable<Employee> {
     this.name = name;
   }
 
-  public Double getSalary() {
-    return salary;
+  public Instant getDate() {
+    return date;
   }
 
-  public void setSalary(Double salary) {
-    this.salary = salary;
+  public void setDate(Instant date) {
+    this.date = date;
   }
 
   @Override
-  public int compareTo(Employee employee) {
-    return getSalary().compareTo(employee.getSalary());
+  public String toString() {
+    return "LogEntry [name=" + name + ", date=" + date + "]";
   }
 
   @Override
@@ -38,7 +40,6 @@ public class Employee implements Comparable<Employee> {
     final int prime = 31;
     int result = 1;
     result = prime * result + ((name == null) ? 0 : name.hashCode());
-    result = prime * result + ((salary == null) ? 0 : salary.hashCode());
     return result;
   }
 
@@ -50,16 +51,11 @@ public class Employee implements Comparable<Employee> {
       return false;
     if (getClass() != obj.getClass())
       return false;
-    Employee other = (Employee) obj;
+    LogEntry other = (LogEntry) obj;
     if (name == null) {
       if (other.name != null)
         return false;
     } else if (!name.equals(other.name))
-      return false;
-    if (salary == null) {
-      if (other.salary != null)
-        return false;
-    } else if (!salary.equals(other.salary))
       return false;
     return true;
   }
